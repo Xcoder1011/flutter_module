@@ -1,9 +1,14 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_boost/flutter_boost.dart';
+import 'package:flutter_module/pages/lifecycle_test_page.dart';
+import 'package:flutter_module/pages/open_native.dart';
 import 'package:flutter_module/router/sk_router.dart';
 
 void main() {
+  ///添加全局生命周期监听类
+  PageVisibilityBinding.instance.addGlobalObserver(AppLifecycleObserver());
   ///这里的CustomFlutterBinding调用务必不可缺少，用于控制Boost状态的resume和pause
   CustomFlutterBinding();
   //滚动性能优化 1.22.0
